@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Доставка</h1>{% for item in deliveries %}<div class="card p-3 mb-2"><a href="{% url 'orders:detail' item.order.pk %}">Заказ №{{ item.order.pk }}</a><span>{{ item.delivery_address.address }} · {{ item.get_status_display }}</span></div>{% empty %}<p>Нет доставок.</p>{% endfor %}{% endblock %}
